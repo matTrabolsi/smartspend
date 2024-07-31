@@ -34,20 +34,43 @@ public class HomeController : Controller
 
     public IActionResult Expenses()
     {
+        var allExpenses = _context.Expenses.ToList();
+        return View(allExpenses);
+    }
+
+    public IActionResult CreateEditExpenses(int? id)
+    {
+        
+        if(id != null)
+        {
+            var expenseInDb = _context.Expenses.SingleOrDefault(expense => expense.Id == id);
+            return View(expenseInDb);
+        }
+
         return View();
     }
 
-    public IActionResult CreateEditExpenses()
+    public IActionResult DeleteExpense(int id)
     {
-        return View();
+        var expenseInDb = _context.Expenses.SingleOrDefault(expense => expense.Id == id);
+        _context.Expenses.Remove(expenseInDb);
+        _context.SaveChanges();
+        return RedirectToAction("Expenses");
     }
 
     public IActionResult CEEForm(Expense model)
     {
+        if(model.Id==0)
+        {
+            _context.Expenses.Add(model);
+        }
+        else 
+        {   
+            _context.Expenses.Update(model);
+        }
 
-        _context.Expenses.Add(model);
         _context.SaveChanges();
 
-        return RedirectToAction("CreateEditExpenses");
+        return RedirectToAction("Expenses");
     }
 }
