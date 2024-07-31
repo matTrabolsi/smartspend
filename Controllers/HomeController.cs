@@ -35,6 +35,11 @@ public class HomeController : Controller
     public IActionResult Expenses()
     {
         var allExpenses = _context.Expenses.ToList();
+        
+        var totalExpenses = allExpenses.Sum(x => x.Value);
+
+        ViewBag.Expenses = totalExpenses;
+
         return View(allExpenses);
     }
 

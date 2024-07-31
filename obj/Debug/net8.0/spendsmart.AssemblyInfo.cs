@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("spendsmart")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4057a1ddb32d3d36c12c7d93d59ee89349e14cbe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+feb61389fef35c63d21ec8a9edb8d896fce87a2a")]
 [assembly: System.Reflection.AssemblyProductAttribute("spendsmart")]
 [assembly: System.Reflection.AssemblyTitleAttribute("spendsmart")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
